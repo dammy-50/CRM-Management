@@ -16,8 +16,8 @@ def load_data():
 data = load_data()
 
 # Image paths
-logo_url = r"C:\Users\USER\Desktop\CRM Management\wifi.jpeg"
-background_url = r"C:\Users\USER\Desktop\CRM Management\homepage.jpeg"
+logo_url = r"C:\Users\USER\git clones\CRM-Management\wifi.jpeg"
+background_url = r"C:\Users\USER\git clones\CRM-Management\homepage.jpeg"
 
 # App layout
 def main():
@@ -79,7 +79,7 @@ def analytics_app():
 def feedback_app():
     st.title("Customer Feedback 💬")
     st.markdown("### Please provide your feedback below:")
-    feedback = st.text_area("Your Feedback", height=200, label_visibility="hidden")
+    feedback = st.text_area("Your Feedback", height=200)
     if st.button("Submit"):
         st.success("Thank you for your feedback! 😊")
 
