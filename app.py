@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 from PIL import Image
+import requests
+from io import BytesIO
 
 # Set the page configuration
 st.set_page_config(page_title="WiFi Company CRM", page_icon=":satellite:", layout="wide")
@@ -9,20 +11,26 @@ st.set_page_config(page_title="WiFi Company CRM", page_icon=":satellite:", layou
 # Load and cache data
 @st.cache_data
 def load_data():
-    url = r"C:\Users\USER\Desktop\telecom_churn.csv"
+    url = "https://raw.githubusercontent.com/dammy-50/CRM-Management/main/telecom_churn.csv"
     data = pd.read_csv(url)
     return data
 
 data = load_data()
 
-# Image paths
-logo_url = r"C:\Users\USER\git clones\CRM-Management\wifi.jpeg"
-background_url = r"C:\Users\USER\git clones\CRM-Management\homepage.jpeg"
+# Image URLs
+logo_url = "https://raw.githubusercontent.com/dammy-50/CRM-Management/main/wifi.jpeg"
+background_url = "https://raw.githubusercontent.com/dammy-50/CRM-Management/main/homepage.jpeg"
+
+# Load images
+def load_image(url):
+    response = requests.get(url)
+    img = Image.open(BytesIO(response.content))
+    return img
 
 # App layout
 def main():
     # Sidebar
-    st.sidebar.image(logo_url, use_column_width=True)
+    st.sidebar.image(load_image(logo_url), use_column_width=True)
     st.sidebar.title("WiFi CRM Dashboard")
     st.sidebar.markdown("### Navigation")
     nav = st.sidebar.radio("Navigation", ["Home", "Analytics", "Customer Feedback"])
@@ -36,7 +44,7 @@ def main():
 
 # Home section
 def home_app():
-    st.image(background_url, use_column_width=True)
+    st.image(load_image(background_url), use_column_width=True)
     st.title("Welcome to the WiFi Company CRM 📡")
     st.markdown("""
         ### Overview
