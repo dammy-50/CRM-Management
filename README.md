@@ -71,7 +71,7 @@ This is the main file of the application. It contains the following sections:
 - Plotly
 - PIL
 
-Ensure these dependencies are installed using the `requirements.txt` file.
+I ensured these dependencies are installed using the `requirements.txt` file.
 
 ## Usage
 
