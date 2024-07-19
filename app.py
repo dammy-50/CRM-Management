@@ -25,7 +25,7 @@ def main():
     st.sidebar.image(logo_url, use_column_width=True)
     st.sidebar.title("WiFi CRM Dashboard")
     st.sidebar.markdown("### Navigation")
-    nav = st.sidebar.radio("", ["Home", "Analytics", "Customer Feedback"])
+    nav = st.sidebar.radio("Navigation", ["Home", "Analytics", "Customer Feedback"])
 
     if nav == "Home":
         home_app()
@@ -79,7 +79,7 @@ def analytics_app():
 def feedback_app():
     st.title("Customer Feedback 💬")
     st.markdown("### Please provide your feedback below:")
-    feedback = st.text_area("Your Feedback", height=200)
+    feedback = st.text_area("Your Feedback", height=200, label_visibility="hidden")
     if st.button("Submit"):
         st.success("Thank you for your feedback! 😊")
 
