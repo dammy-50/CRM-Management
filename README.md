@@ -1,5 +1,5 @@
 # WiFi Company CRM Dashboard
-Welcome to the WiFi Company CRM Dashboard repository! This Streamlit application provides comprehensive insights and analytics on customer data for our WiFi company. The goal is to help the team understand customer behavior, improve service quality, and reduce churn rates.  https://crm-management-tjbkbp4amqgb3vvjxbwurw.streamlit.app/
+Welcome to the WiFi Company CRM Dashboard repository! This Streamlit application provides comprehensive insights and analytics on customer data for our WiFi company. The goal is to help the team understand customer behavior, improve service quality, and reduce churn rates. View here: https://crm-management-tjbkbp4amqgb3vvjxbwurw.streamlit.app/
 
 
 ## Features
